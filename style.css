@@ -1,0 +1,175 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(224, 249, 255);
+  overflow: hidden;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card {
+  height: 500px;
+  width: 400px;
+  border-radius: 5%;
+  border-style: none;
+  padding: 10px;
+  text-align: center;
+  position: relative;
+  backdrop-filter: blur(10px);
+  background-color: rgba(238, 238, 238, 0.2);
+  z-index: 2;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
+    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+}
+.card img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 5%;
+  border-style: none;
+}
+.card h1 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+}
+.card h2 {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  padding: 10px;
+  color: red;
+}
+#btan {
+  height: 75px;
+  width: 225px;
+  background-color: rgb(50, 219, 50);
+  color: rgb(242, 228, 228);
+  border-radius: 5%;
+  border-style: none;
+  font-size: x-large;
+  font-weight: bold;
+  padding: 10px;
+  margin-top: 20px;
+}
+.card i {
+  font-size: 75px;
+  color: red;
+  display: flex;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0.75;
+  transition: all ease 0.5s;
+}
+.toggle_btn {
+  height: 50px;
+  display: flex;
+  z-index: 2;
+  position: absolute;
+  top: 50px;
+  right: 20px;
+}
+.toggle_label {
+  height: 30px;
+  width: 50px;
+  background-color: #201e43;
+  border-radius: 30px;
+  z-index: 2;
+  transition: all ease 1s;
+  position: absolute;
+  right: 20px;
+  top: 50px;
+  box-shadow: rgb(204, 219, 232) 1px 1px 2px 0px inset,
+    rgba(255, 255, 255, 0.5) -1px -1px 2px 0px inset;
+  cursor: pointer;
+}
+
+#checkbox {
+  visibility: hidden;
+}
+.toggle_ball {
+  height: 30px;
+  width: 30px;
+  background-color: #eeeeee;
+  border-radius: 50%;
+  display: inline-block;
+  transition: all ease 1s;
+  transform: scale(0.7);
+  z-index: 2;
+}
+.extra {
+  display: flex;
+  position: relative;
+}
+#moon {
+  font-size: 30px;
+  color: #134b70;
+  display: inline-block;
+  transform: scale(0.9);
+  position: absolute;
+}
+#sun {
+  font-size: 30px;
+  color: #eeeeee;
+  display: inline-block;
+  transform: scale(0);
+  position: absolute;
+  right: 20px;
+}
+#checkbox:checked + .toggle_label {
+  background-color: rgb(224, 249, 255);
+  box-shadow: 0 0 10px #fff, 0 0 6px #fff, 0 0 7px #bc13fe, 0 0 8px #bc13fe,
+    0 0 6px #bc13fe, inset 0 0 8px#bc13fe;
+}
+#foto.shine {
+  transition: 1s ease-in-out;
+  box-shadow: 0 0 10px #fff, 0 0 6px #fff, 0 0 7px #eaff00, 0 0 8px #e4ea36,
+    0 0 6px #e5eb30, inset 0 0 8px#ffff03;
+}
+#head.shine {
+  color: #eeeeee;
+  transition: 1s all ease-in-out;
+}
+#btan.shine {
+  transition: box-shadow 1.5s ease-in-out;
+  box-shadow: 0 0 10px #fff, 0 0 6px #fff, 0 0 7px #00ff1a, 0 0 8px #1a982b,
+    0 0 6px #51f371, inset 0 0 8px#45f84b;
+}
+.card.shine {
+  box-shadow: 0 0 10px #fff, 0 0 6px #fff, 0 0 7px #ff0000, 0 0 8px #fa3a3a,
+    0 0 6px #fd3a3a, inset 0 0 8px#fe1313;
+}
+#checkbox:checked + .toggle_label .toggle_ball {
+  transform: translateX(20px) scale(0.8);
+  background-color: #134b70;
+}
+#checkbox:checked + .toggle_label .toggle_ball #moon {
+  transform: translateX(20px) scale(0);
+}
+#checkbox:checked + .toggle_label .toggle_ball #sun {
+  transform: translateX(20px) scale(0.7);
+}
+.dark-mode {
+  position: absolute;
+  transform: scale(0);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #201e43;
+  transition: 0.5s;
+  z-index: 1;
+  right: 20px;
+  top: 50px;
+}
+.dark-mode.active {
+  transform: scale(200);
+  transition: 1.5s ease-in-out;
+}
